@@ -7,7 +7,7 @@ quint64 DirSizeMapper::getDirSize(const QFileInfo& fileInfo) const
         dir.cd(fileInfo.fileName());
 
         quint64 sum = 0;
-        foreach (const QFileInfo& entry, dir.entryInfoList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot))
+        foreach (const QFileInfo& entry, dir.entryInfoList(QDir::Dirs | QDir::Files | QDir::Hidden | QDir::NoDotAndDotDot))
             sum += getDirSize(entry);
 
         return sum;
@@ -18,13 +18,13 @@ QMap<QString, quint64>& DirSizeMapper::getSizesMap(const QDir& dir) const
 {
     QMap<QString, quint64>* map = new QMap<QString, quint64>();
 
-    foreach (const QFileInfo& fileInfo, dir.entryInfoList(QDir::Dirs | QDir::NoDotDot))
+    foreach (const QFileInfo& fileInfo, dir.entryInfoList(QDir::Dirs | QDir::Hidden | QDir::NoDotDot))
         map->insert(fileInfo.fileName(), getDirSize(fileInfo));
 
     quint64 sum = 0;
-    foreach (const QFileInfo& fileInfo, dir.entryInfoList(QDir::Files))
+    foreach (const QFileInfo& fileInfo, dir.entryInfoList(QDir::Files | QDir::Hidden))
         sum += getDirSize(fileInfo);
-    map->insert("fiels", sum);
+    map->insert("files", sum);
 
     return *map;
 }
