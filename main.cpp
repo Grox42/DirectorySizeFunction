@@ -1,8 +1,16 @@
-#include <QCoreApplication>
+#include "ISizeMapper.h"
+#include "DirSizeMapper.h"
+#include "TypeSizeMapper.h"
+#include <QDebug>
 
-int main(int argc, char *argv[])
+int main()
 {
-    QCoreApplication a(argc, argv);
+    QDir rootDir("Dir");
+    ISizeMapper* mapper = new TypeSizeMapper(); //new DirSizeMapper();
+    QMap<QString, quint64> map = mapper->getSizesMap(rootDir);
 
-    return a.exec();
+    foreach (const QString& key, map.keys())
+        qDebug() << key << map.value(key);
+
+    return 0;
 }
