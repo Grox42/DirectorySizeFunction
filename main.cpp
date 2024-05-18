@@ -6,7 +6,7 @@
 int main()
 {
     QDir rootDir("Dir");
-    ISizeMapper* mapper = new TypeSizeMapper(); //new DirSizeMapper();
+    ISizeMapper* mapper = new DirSizeMapper();
     QMap<QString, quint64> map = mapper->getSizesMap(rootDir);
 
     foreach (const QString& key, map.keys())
