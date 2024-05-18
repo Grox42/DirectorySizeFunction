@@ -6,7 +6,7 @@ void TypeSizeMapper::addTypeSizePairs(const QFileInfo& fileInfo, QMap<QString, q
         QDir dir = fileInfo.dir();
         dir.cd(fileInfo.fileName());
 
-        foreach (const QFileInfo& entry, dir.entryInfoList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot))
+        foreach (const QFileInfo& entry, dir.entryInfoList(QDir::Dirs | QDir::Files | QDir::Hidden | QDir::NoDotAndDotDot))
             addTypeSizePairs(entry, map);
     } else {
         QString suffix = '.' + fileInfo.completeSuffix();
