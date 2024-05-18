@@ -5,7 +5,7 @@
 
 int main()
 {
-    QDir rootDir("Dir");
+    QDir rootDir("../MicroGit");
     ISizeMapper* mapper = new DirSizeMapper();
     QMap<QString, quint64> map = mapper->getSizesMap(rootDir);
 
