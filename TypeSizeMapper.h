@@ -10,6 +10,7 @@ private:
 public:
     virtual ~TypeSizeMapper() override = default;
     virtual QMap<QString, quint64>& getSizesMap(const QDir& dir) const override;
+    virtual QMap<QString, QString>& getPercentagesMap(const QMap<QString, quint64>& sizesMap) const override;
 };
 
 #endif // TYPESIZEMAPPER_H

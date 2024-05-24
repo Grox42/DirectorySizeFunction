@@ -23,3 +23,17 @@ QMap<QString, quint64>& TypeSizeMapper::getSizesMap(const QDir& dir) const
 
     return *map;
 }
+
+QMap<QString, QString>& TypeSizeMapper::getPercentagesMap(const QMap<QString, quint64>& sizesMap) const
+{
+    QMap<QString, QString>* map = new QMap<QString, QString>();
+
+    qreal whole {0};
+    foreach (const QString& key, sizesMap.keys())
+        whole += sizesMap.value(key);
+
+    foreach (const QString& key, sizesMap.keys())
+        map->insert(key, uint64ToPercent(sizesMap.value(key), whole));
+
+    return *map;
+}
