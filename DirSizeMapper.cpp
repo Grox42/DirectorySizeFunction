@@ -28,3 +28,14 @@ QMap<QString, quint64>& DirSizeMapper::getSizesMap(const QDir& dir) const
 
     return *map;
 }
+
+QMap<QString, QString>& DirSizeMapper::getPercentagesMap(const QMap<QString, quint64>& sizesMap) const
+{
+    QMap<QString, QString>* map = new QMap<QString, QString>();
+
+    qreal whole {static_cast<qreal>(sizesMap.value("."))};
+    foreach (const QString& key, sizesMap.keys())
+        if (key != ".") map->insert(key, uint64ToPercent(sizesMap.value(key), whole));
+
+    return *map;
+}
