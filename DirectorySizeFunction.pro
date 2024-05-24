@@ -8,6 +8,7 @@ CONFIG += c++17 cmdline
 
 SOURCES += \
         DirSizeMapper.cpp \
+        ISizeMapper.cpp \
         TypeSizeMapper.cpp \
         main.cpp
 
