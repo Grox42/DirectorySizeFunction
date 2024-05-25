@@ -3,11 +3,8 @@
 #include "TypeSizeMapper.h"
 #include <QDebug>
 
-int main()
+void output(const Context& context, const QDir& rootDir)
 {
-    QDir rootDir("../MicroGit");
-    Context context(new DirSizeMapper);
-
     QMap<QString, quint64> sizeMap = context.getSizesMap(rootDir);
     foreach (const QString& key, sizeMap.keys())
         qDebug() << key << sizeMap.value(key);
@@ -17,6 +14,17 @@ int main()
     QMap<QString, QString> percentMap = context.getPercentagesMap(rootDir);
     foreach (const QString& key, percentMap.keys())
         qDebug() << key << percentMap.value(key);
+
+    qDebug() << "\n\n";
+}
+
+int main()
+{
+    QDir rootDir("Tests/test1");
+
+    output(Context(new DirSizeMapper), rootDir);
+
+    output(Context(new TypeSizeMapper), rootDir);
 
     return 0;
 }
