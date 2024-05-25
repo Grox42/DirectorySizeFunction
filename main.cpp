@@ -6,8 +6,7 @@
 int main()
 {
     QDir rootDir("../MicroGit");
-    ISizeMapper* mapper = new DirSizeMapper();
-    Context context(mapper);
+    Context context(new DirSizeMapper);
 
     QMap<QString, quint64> sizeMap = context.getSizesMap(rootDir);
     foreach (const QString& key, sizeMap.keys())
@@ -18,8 +17,6 @@ int main()
     QMap<QString, QString> percentMap = context.getPercentagesMap(rootDir);
     foreach (const QString& key, percentMap.keys())
         qDebug() << key << percentMap.value(key);
-
-    delete mapper;
 
     return 0;
 }

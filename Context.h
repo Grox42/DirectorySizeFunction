@@ -9,7 +9,6 @@ private:
     ISizeMapper* mapper;
 public:
     Context(ISizeMapper* mapper);
-    void setMapper(ISizeMapper* mapper);
     QMap<QString, quint64> getSizesMap(const QDir& dir) const;
     QMap<QString, QString> getPercentagesMap(const QDir& dir) const;
 };
