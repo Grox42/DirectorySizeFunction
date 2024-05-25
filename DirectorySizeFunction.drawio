@@ -1,64 +1,82 @@
-<mxfile host="app.diagrams.net" modified="2024-05-24T19:59:30.115Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 YaBrowser/24.4.0.0 Safari/537.36" etag="gP5uoP159qsu9U6m0de2" version="24.3.1" type="device">
+<mxfile host="app.diagrams.net" modified="2024-05-25T04:40:59.443Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 YaBrowser/24.4.0.0 Safari/537.36" etag="su5dek2gM1cAroalO0ZA" version="24.4.8" type="device">
   <diagram name="Страница — 1" id="UxThPJ2uUKQ7TRx5htB0">
-    <mxGraphModel dx="1399" dy="610" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1566" dy="712" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;ISizeMapper&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;ISizeMapper&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-400" y="200" width="510" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="TriIGNqtYA9cSWhvdzmY-1">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="TriIGNqtYA9cSWhvdzmY-1" vertex="1">
           <mxGeometry y="26" width="510" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-4" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;#&amp;nbsp;&lt;u&gt;uint64ToPercent(part: Integer, whole: Real, precision: Integer = 2): String&lt;/u&gt;&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="TriIGNqtYA9cSWhvdzmY-1">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-4" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;#&amp;nbsp;&lt;u&gt;uint64ToPercent(part: Integer, whole: Real, precision: Integer = 2): String&lt;/u&gt;&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TriIGNqtYA9cSWhvdzmY-1" vertex="1">
           <mxGeometry y="34" width="510" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-5" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;+ &lt;i&gt;getSizesMap(dir: QDir): Q&lt;/i&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;Map&amp;lt;String, Integer&amp;gt;&lt;/i&gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="TriIGNqtYA9cSWhvdzmY-1">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-5" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;+ &lt;i&gt;getSizesMap(dir: QDir): Q&lt;/i&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;Map&amp;lt;String, Integer&amp;gt;&lt;/i&gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TriIGNqtYA9cSWhvdzmY-1" vertex="1">
           <mxGeometry y="60" width="510" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-6" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;+ &lt;i&gt;getPercentagesMap(sizesMap: QMap&amp;lt;String, Integer&amp;gt;):&amp;nbsp;&lt;/i&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;QMap&amp;lt;String, String&amp;gt;&lt;/i&gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="TriIGNqtYA9cSWhvdzmY-1">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-6" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;+ &lt;i&gt;getPercentagesMap(sizesMap: QMap&amp;lt;String, Integer&amp;gt;):&amp;nbsp;&lt;/i&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;QMap&amp;lt;String, String&amp;gt;&lt;/i&gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TriIGNqtYA9cSWhvdzmY-1" vertex="1">
           <mxGeometry y="86" width="510" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-7" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;DirSizeMapper&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-7" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;DirSizeMapper&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-400" y="360" width="510" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-9" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="TriIGNqtYA9cSWhvdzmY-7">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-9" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="TriIGNqtYA9cSWhvdzmY-7" vertex="1">
           <mxGeometry y="26" width="510" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-10" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;- getDirSize(fileInfo: QFileInfo): Integer&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="TriIGNqtYA9cSWhvdzmY-7">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-10" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;- getDirSize(fileInfo: QFileInfo): Integer&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TriIGNqtYA9cSWhvdzmY-7" vertex="1">
           <mxGeometry y="34" width="510" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-12" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;+ getSizesMap(dir: QDir):&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;QMap&amp;lt;String, Integer&amp;gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="TriIGNqtYA9cSWhvdzmY-7">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-12" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;+ getSizesMap(dir: QDir):&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;QMap&amp;lt;String, Integer&amp;gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TriIGNqtYA9cSWhvdzmY-7" vertex="1">
           <mxGeometry y="60" width="510" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-13" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;+ getPercentagesMap(sizesMap: QMap&amp;lt;String, Integer&amp;gt;):&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;QMap&amp;lt;String, String&amp;gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="TriIGNqtYA9cSWhvdzmY-7">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-13" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;+ getPercentagesMap(sizesMap: QMap&amp;lt;String, Integer&amp;gt;):&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;QMap&amp;lt;String, String&amp;gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TriIGNqtYA9cSWhvdzmY-7" vertex="1">
           <mxGeometry y="86" width="510" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-11" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;fontSize=12;curved=1;" edge="1" parent="1" source="TriIGNqtYA9cSWhvdzmY-7" target="TriIGNqtYA9cSWhvdzmY-1">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-11" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;fontSize=12;curved=1;" parent="1" source="TriIGNqtYA9cSWhvdzmY-7" target="TriIGNqtYA9cSWhvdzmY-1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="-40" y="470" as="sourcePoint" />
             <mxPoint x="120" y="470" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-14" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;TypeSizeMapper&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-14" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;TypeSizeMapper&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-400" y="40" width="520" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-16" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="TriIGNqtYA9cSWhvdzmY-14">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-16" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="TriIGNqtYA9cSWhvdzmY-14" vertex="1">
           <mxGeometry y="26" width="520" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-17" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;-&amp;nbsp;addTypeSizePairs(fileInfo: QFileInfo, map: QMap&amp;lt;String, Integer&amp;gt;)&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="TriIGNqtYA9cSWhvdzmY-14">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-17" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;-&amp;nbsp;addTypeSizePairs(fileInfo: QFileInfo, map: QMap&amp;lt;String, Integer&amp;gt;)&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TriIGNqtYA9cSWhvdzmY-14" vertex="1">
           <mxGeometry y="34" width="520" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-18" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;+ getSizesMap(dir: QDir):&amp;nbsp;QMap&amp;lt;String, Integer&amp;gt;&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="TriIGNqtYA9cSWhvdzmY-14">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-18" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;+ getSizesMap(dir: QDir):&amp;nbsp;QMap&amp;lt;String, Integer&amp;gt;&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TriIGNqtYA9cSWhvdzmY-14" vertex="1">
           <mxGeometry y="60" width="520" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-19" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;+ getPercentagesMap(sizesMap: QMap&amp;lt;String, Integer&amp;gt;):&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;QMap&amp;lt;String, String&amp;gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="TriIGNqtYA9cSWhvdzmY-14">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-19" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;+ getPercentagesMap(sizesMap: QMap&amp;lt;String, Integer&amp;gt;):&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;QMap&amp;lt;String, String&amp;gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TriIGNqtYA9cSWhvdzmY-14" vertex="1">
           <mxGeometry y="86" width="520" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="TriIGNqtYA9cSWhvdzmY-21" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;fontSize=12;curved=1;" edge="1" parent="1" source="TriIGNqtYA9cSWhvdzmY-14" target="TriIGNqtYA9cSWhvdzmY-1">
+        <mxCell id="TriIGNqtYA9cSWhvdzmY-21" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;fontSize=12;curved=1;" parent="1" source="TriIGNqtYA9cSWhvdzmY-14" target="TriIGNqtYA9cSWhvdzmY-1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="-40" y="270" as="sourcePoint" />
             <mxPoint x="220" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7iiai4h3uSTCWG5oYoJT-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Context&lt;/font&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="200" width="360" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="7iiai4h3uSTCWG5oYoJT-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="7iiai4h3uSTCWG5oYoJT-1">
+          <mxGeometry y="26" width="360" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="7iiai4h3uSTCWG5oYoJT-7" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;+ getSizesMap(dir: QDir):&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;QMap&amp;lt;String, Integer&amp;gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="7iiai4h3uSTCWG5oYoJT-1">
+          <mxGeometry y="34" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="7iiai4h3uSTCWG5oYoJT-8" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;+ getPercentagesMap(dir: QDir):&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;QMap&amp;lt;String, Integer&amp;gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="7iiai4h3uSTCWG5oYoJT-1">
+          <mxGeometry y="60" width="360" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="7iiai4h3uSTCWG5oYoJT-9" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;fontSize=12;curved=1;" edge="1" parent="1" source="TriIGNqtYA9cSWhvdzmY-1" target="7iiai4h3uSTCWG5oYoJT-1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="70" y="380" as="sourcePoint" />
+            <mxPoint x="230" y="380" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
