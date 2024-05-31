@@ -1,30 +1,12 @@
-#include "Context.h"
-#include "DirSizeMapper.h"
-#include "TypeSizeMapper.h"
-#include <QDebug>
+#include <QApplication>
+#include "MainWindow.h"
 
-void output(const Context& context, const QDir& rootDir)
+int main(int argc, char *argv[])
 {
-    QMap<QString, quint64> sizeMap = context.getSizesMap(rootDir);
-    foreach (const QString& key, sizeMap.keys())
-        qDebug() << key << sizeMap.value(key);
+    QApplication a(argc, argv);
 
-    qDebug() << '\n';
+    MainWindow mainWindow("D:/");
+    mainWindow.show();
 
-    QMap<QString, QString> percentMap = context.getPercentagesMap(rootDir);
-    foreach (const QString& key, percentMap.keys())
-        qDebug() << key << percentMap.value(key);
-
-    qDebug() << "\n\n";
-}
-
-int main()
-{
-    QDir rootDir("Tests/test1");
-
-    output(Context(new DirSizeMapper), rootDir);
-
-    output(Context(new TypeSizeMapper), rootDir);
-
-    return 0;
+    return a.exec();
 }

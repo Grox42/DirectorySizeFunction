@@ -1,7 +1,7 @@
 #ifndef TYPESIZEMAPPER_H
 #define TYPESIZEMAPPER_H
 
-#include "ISizeMapper.h"
+#include "Header/Strategy/ISizeMapper.h"
 
 class TypeSizeMapper : public ISizeMapper
 {

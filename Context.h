@@ -1,7 +1,7 @@
 #ifndef CONTEXT_H
 #define CONTEXT_H
 
-#include "ISizeMapper.h"
+#include "Header/Strategy/ISizeMapper.h"
 
 class Context
 {
