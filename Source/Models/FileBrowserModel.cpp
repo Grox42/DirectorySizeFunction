@@ -21,3 +21,10 @@ QVariant FileBrowserModel::data(const QModelIndex &index, int role) const
 {
     return QVariant();
 }
+
+void FileBrowserModel::resetEntrances()
+{
+    entrances.clear();
+
+
+}

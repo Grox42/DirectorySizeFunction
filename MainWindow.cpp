@@ -2,6 +2,7 @@
 #include <QSplitter>
 #include <QMenu>
 #include <QMenuBar>
+#include <QItemSelectionModel>
 
 MainWindow::MainWindow(const QString& rootDirPath, QWidget* parent) : QMainWindow(parent)
 {
@@ -37,6 +38,19 @@ MainWindow::MainWindow(const QString& rootDirPath, QWidget* parent) : QMainWindo
     splitter->addWidget(fileSystemView);
     splitter->addWidget(dirView);
     setCentralWidget(splitter);
+
+    QItemSelectionModel* selectionModel = fileSystemView->selectionModel();
+    QObject::connect(selectionModel, &QItemSelectionModel::selectionChanged, this, &MainWindow::selectionChanged);
+}
+
+void MainWindow::selectionChanged(const QItemSelection &selected, const QItemSelection &deselected)
+{
+    Q_UNUSED(deselected);
+
+    //QModelIndex index = fileSystemView->selectionModel()->currentIndex();
+    QModelIndexList indexes = selected.indexes();
+
+    dirView->setRootIndex(fileSystemModel->setRootPath(fileSystemModel->filePath(indexes.constFirst())));
 }
 
 void MainWindow::setGroupByDir() const

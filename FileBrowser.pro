@@ -12,6 +12,7 @@ SOURCES += \
     Source/Models/FileBrowserModel.cpp \
     MainWindow.cpp \
     Context.cpp \
+    Source/Models/TableEntryModel.cpp \
     Source/Strategy/DirSizeMapper.cpp \
     Source/Strategy/ISizeMapper.cpp \
     Source/Strategy/TypeSizeMapper.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
 
 HEADERS += \
     Header/Models/FileBrowserModel.h \
+    Header/Models/TableEntryModel.h \
     MainWindow.h \
     Context.h \
     Header/Strategy/DirSizeMapper.h \

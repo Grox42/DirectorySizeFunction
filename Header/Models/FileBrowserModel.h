@@ -1,6 +1,7 @@
 #ifndef FILEBROWSERMODEL_H
 #define FILEBROWSERMODEL_H
 
+#include "Header/Models/TableEntryModel.h"
 #include "Header/Strategy/ISizeMapper.h"
 #include <QAbstractTableModel>
 
@@ -9,7 +10,8 @@ class FileBrowserModel : public QAbstractTableModel
     Q_OBJECT
 private:
     ISizeMapper* mapper;
-    QMap<QString, QString> map;
+    QList<TableEntryModel> entrances;
+    void resetEntrances();
 public:
     FileBrowserModel(ISizeMapper* mapper, QObject* parent = nullptr);
     qint32 rowCount(const QModelIndex &parent) const;

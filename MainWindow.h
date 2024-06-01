@@ -18,6 +18,7 @@ private:
 public:
     MainWindow(const QString& rootDirPath, QWidget* parent = nullptr);
 private slots:
+    void selectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
     void setGroupByDir() const;
     void setGroupByType() const;
 };
