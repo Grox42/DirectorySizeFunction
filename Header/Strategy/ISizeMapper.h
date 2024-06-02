@@ -11,7 +11,7 @@ protected:
 public:
     virtual ~ISizeMapper() = default;
     virtual QMap<QString, quint64>& getSizesMap(const QDir& dir) const = 0;
-    virtual QMap<QString, QString>& getPercentagesMap(const QMap<QString, quint64>& sizesMap) const = 0;
+    QMap<QString, QString>& getPercentagesMap(const QMap<QString, quint64>& sizesMap) const;
 };
 
 #endif // ISIZEMAPPER_H

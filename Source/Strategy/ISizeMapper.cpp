@@ -15,3 +15,18 @@ QString ISizeMapper::uint64ToPercent(quint64 part, qreal whole, quint32 precisio
 
     return QString().number(percent) + '%';
 }
+
+
+QMap<QString, QString>& ISizeMapper::getPercentagesMap(const QMap<QString, quint64>& sizesMap) const
+{
+    QMap<QString, QString>* map = new QMap<QString, QString>();
+
+    qreal whole = 0;
+    foreach (const QString& key, sizesMap.keys())
+        whole += sizesMap.value(key);
+
+    foreach (const QString& key, sizesMap.keys())
+        if (key != ".") map->insert(key, uint64ToPercent(sizesMap.value(key), whole));
+
+    return *map;
+}
