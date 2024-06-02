@@ -1,4 +1,4 @@
-#include "ISizeMapper.h"
+#include "Header/Strategy/ISizeMapper.h"
 
 QString ISizeMapper::uint64ToPercent(quint64 part, qreal whole, quint32 precision)
 {

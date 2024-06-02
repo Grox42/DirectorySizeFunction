@@ -1,7 +1,6 @@
 #ifndef ISIZEMAPPER_H
 #define ISIZEMAPPER_H
 
-#include <QString>
 #include <QMap>
 #include <QDir>
 

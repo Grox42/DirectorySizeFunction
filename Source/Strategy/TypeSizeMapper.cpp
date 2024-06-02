@@ -1,4 +1,4 @@
-#include "TypeSizeMapper.h"
+#include "Header/Strategy/TypeSizeMapper.h"
 
 void TypeSizeMapper::addTypeSizePairs(const QFileInfo& fileInfo, QMap<QString, quint64>& map) const
 {

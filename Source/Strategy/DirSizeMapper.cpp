@@ -1,4 +1,4 @@
-#include "DirSizeMapper.h"
+#include "Header/Strategy/DirSizeMapper.h"
 
 quint64 DirSizeMapper::getDirSize(const QFileInfo& fileInfo) const
 {
