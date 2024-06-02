@@ -1,4 +1,6 @@
 #include "Header/Models/FileBrowserModel.h"
+#include "Header/Strategy/DirSizeMapper.h"
+#include "Header/Strategy/TypeSizeMapper.h"
 #include <QElapsedTimer>
 #include <QDebug>
 
@@ -35,13 +37,9 @@ QVariant FileBrowserModel::data(const QModelIndex& index, int role) const
     return entrances[index.row()][index.column()];
 }
 
-void FileBrowserModel::setStrategy(ISizeMapper* mapper)
-{
-    this->mapper = mapper;
-}
-
 void FileBrowserModel::setRootPath(const QString& rootPath)
 {
+    this->rootPath = rootPath;
     entrances.clear();
 
     QElapsedTimer timer;
@@ -56,4 +54,11 @@ void FileBrowserModel::setRootPath(const QString& rootPath)
         entrances.append(QList<QString> { key, QString::number(sizeMap.value(key)), percentMap.value(key) });
 
     emit headerDataChanged(Qt::Vertical, 0, entrances.size());
+}
+
+void FileBrowserModel::setStrategy(ISizeMapper *mapper)
+{
+    this->mapper = mapper;
+
+    if (rootPath.size() != 0) setRootPath(rootPath);
 }

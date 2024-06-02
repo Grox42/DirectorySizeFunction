@@ -9,9 +9,10 @@ class FileBrowserModel : public QAbstractTableModel
 {
     Q_OBJECT
 private:
-    ISizeMapper* mapper;
     inline static const QList<QString> HEADER
     { "Name", "Size", "Percent" };
+    ISizeMapper* mapper = nullptr;
+    QString rootPath;
     QList<QList<QString>> entrances;
 public:
     FileBrowserModel(QObject* parent = nullptr);
@@ -20,7 +21,6 @@ public:
     QVariant headerData(int section, Qt::Orientation orientation, int role) const;
     QVariant data(const QModelIndex& index, int role) const;
     void setRootPath(const QString& rootPath);
-public slots:
     void setStrategy(ISizeMapper* mapper);
 };
 

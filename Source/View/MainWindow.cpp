@@ -9,12 +9,12 @@ MainWindow::MainWindow(const QString& rootDirPath, QWidget* parent) : QMainWindo
 {
     setGeometry(200, 200, 1600, 800);
 
-    QMenu* group = new QMenu("Group", parent);
+    QMenu* group = new QMenu("Group", this);
 
-    QAction* groupByDir = new QAction("Group By Dir", parent);
+    QAction* groupByDir = new QAction("Group By Dir", this);
     QObject::connect(groupByDir, &QAction::triggered, this, &MainWindow::setGroupByDir);
 
-    QAction* groupByType = new QAction("Group By Type", parent);
+    QAction* groupByType = new QAction("Group By Type", this);
     QObject::connect(groupByType, &QAction::triggered, this, &MainWindow::setGroupByType);
 
     group->addAction(groupByDir);
@@ -32,7 +32,7 @@ MainWindow::MainWindow(const QString& rootDirPath, QWidget* parent) : QMainWindo
     fileSystemView->expandAll();
 
     dirModel = new FileBrowserModel(this);
-    dirModel->setStrategy(new DirSizeMapper());
+    dirModel->setStrategy(strategies[0]);
     dirModel->setRootPath(rootDirPath);
 
     dirView = new QTableView();
@@ -46,21 +46,18 @@ MainWindow::MainWindow(const QString& rootDirPath, QWidget* parent) : QMainWindo
     QObject::connect(selectionModel, &QItemSelectionModel::selectionChanged, this, &MainWindow::selectionChanged);
 }
 
+MainWindow::~MainWindow()
+{
+    for (qint32 index = 0; index < strategies.size(); index++)
+        delete strategies[index];
+}
+
+void MainWindow::setGroupByDir() { dirModel->setStrategy(strategies[0]); }
+
+void MainWindow::setGroupByType() { dirModel->setStrategy(strategies[1]); }
+
 void MainWindow::selectionChanged(const QItemSelection &selected, const QItemSelection &deselected)
 {
     Q_UNUSED(deselected);
-
     dirModel->setRootPath(fileSystemModel->filePath(selected.indexes().constFirst()));
-}
-
-void MainWindow::setGroupByDir()
-{
-    if (dirModel) dirModel->~QAbstractTableModel();
-    dirModel->setStrategy(new DirSizeMapper());
-}
-
-void MainWindow::setGroupByType() const
-{
-    if (dirModel) dirModel->~QAbstractTableModel();
-    //dirModel->setStrategy();
 }
