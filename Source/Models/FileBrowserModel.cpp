@@ -1,6 +1,4 @@
 #include "Header/Models/FileBrowserModel.h"
-#include "Header/Strategy/DirSizeMapper.h"
-#include "Header/Strategy/TypeSizeMapper.h"
 #include <QElapsedTimer>
 #include <QDebug>
 
@@ -45,13 +43,14 @@ void FileBrowserModel::setRootPath(const QString& rootPath)
     QElapsedTimer timer;
     timer.start();
 
-    QMap<QString, quint64> sizeMap = mapper->getSizesMap(QDir(rootPath));
-    QMap<QString, QString> percentMap = mapper->getPercentagesMap(sizeMap);
+    QMap<QString, quint64> sizesMap = mapper->getSizesMap(QDir(rootPath));
+    QMap<QString, QString> percentMap = mapper->getPercentagesMap(sizesMap);
+    QMap<QString, QString> smartSizesMap = mapper->getSmartSizesMap(sizesMap);
 
-    qDebug() << rootPath << " : " << timer.elapsed() << " ms";
+    qDebug() << rootPath << ':' << timer.elapsed() << "ms";
 
     foreach (const QString& key, percentMap.keys())
-        entrances.append(QList<QString> { key, QString::number(sizeMap.value(key)), percentMap.value(key) });
+        entrances.append(QList<QString> { key, smartSizesMap.value(key), percentMap.value(key) });
 
     emit headerDataChanged(Qt::Vertical, 0, entrances.size());
 }

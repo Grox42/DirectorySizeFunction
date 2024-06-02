@@ -1,13 +1,13 @@
 #include "Header/View/MainWindow.h"
-#include "Header/Strategy/DirSizeMapper.h"
 #include <QSplitter>
 #include <QMenu>
 #include <QMenuBar>
 #include <QItemSelectionModel>
+#include <QHeaderView>
 
 MainWindow::MainWindow(const QString& rootDirPath, QWidget* parent) : QMainWindow(parent)
 {
-    setGeometry(200, 200, 1600, 800);
+    setGeometry(200, 200, 1200, 600);
 
     QMenu* group = new QMenu("Group", this);
 
@@ -30,6 +30,9 @@ MainWindow::MainWindow(const QString& rootDirPath, QWidget* parent) : QMainWindo
     fileSystemView = new QTreeView();
     fileSystemView->setModel(fileSystemModel);
     fileSystemView->expandAll();
+    fileSystemView->header()->hideSection(1);
+    fileSystemView->header()->hideSection(2);
+    fileSystemView->header()->hideSection(3);
 
     dirModel = new FileBrowserModel(this);
     dirModel->setStrategy(strategies[0]);
