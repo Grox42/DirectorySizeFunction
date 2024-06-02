@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include "Header/Models/FileBrowserModel.h"
-#include "Header/Strategy/ISizeMapper.h"
 #include "Header/Strategy/DirSizeMapper.h"
 #include "Header/Strategy/TypeSizeMapper.h"
 #include <QMainWindow>

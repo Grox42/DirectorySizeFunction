@@ -16,10 +16,10 @@ private:
     QList<QList<QString>> entrances;
 public:
     FileBrowserModel(QObject* parent = nullptr);
-    qint32 rowCount(const QModelIndex& parent) const;
-    qint32 columnCount(const QModelIndex& parent) const;
-    QVariant headerData(int section, Qt::Orientation orientation, int role) const;
-    QVariant data(const QModelIndex& index, int role) const;
+    qint32 rowCount(const QModelIndex& parent) const override;
+    qint32 columnCount(const QModelIndex& parent) const override;
+    QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
+    QVariant data(const QModelIndex& index, int role) const override;
     void setRootPath(const QString& rootPath);
     void setStrategy(ISizeMapper* mapper);
 };

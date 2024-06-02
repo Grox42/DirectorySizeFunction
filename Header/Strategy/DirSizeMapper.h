@@ -2,7 +2,6 @@
 #define DIRSIZEMAPPER_H
 
 #include "Header/Strategy/ISizeMapper.h"
-#include <QFileInfo>
 
 class DirSizeMapper : public ISizeMapper
 {
