@@ -1,4 +1,4 @@
-#include "TypeSizeMapper.h"
+#include "Header/Strategy/TypeSizeMapper.h"
 
 void TypeSizeMapper::addTypeSizePairs(const QFileInfo& fileInfo, QMap<QString, quint64>& map) const
 {
@@ -20,20 +20,6 @@ QMap<QString, quint64>& TypeSizeMapper::getSizesMap(const QDir& dir) const
     QMap<QString, quint64>* map = new QMap<QString, quint64>();
 
     addTypeSizePairs(QFileInfo(dir.path()), *map);
-
-    return *map;
-}
-
-QMap<QString, QString>& TypeSizeMapper::getPercentagesMap(const QMap<QString, quint64>& sizesMap) const
-{
-    QMap<QString, QString>* map = new QMap<QString, QString>();
-
-    qreal whole {0};
-    foreach (const QString& key, sizesMap.keys())
-        whole += sizesMap.value(key);
-
-    foreach (const QString& key, sizesMap.keys())
-        map->insert(key, uint64ToPercent(sizesMap.value(key), whole));
 
     return *map;
 }

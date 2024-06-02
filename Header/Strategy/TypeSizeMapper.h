@@ -1,7 +1,7 @@
 #ifndef TYPESIZEMAPPER_H
 #define TYPESIZEMAPPER_H
 
-#include "ISizeMapper.h"
+#include "Header/Strategy/ISizeMapper.h"
 
 class TypeSizeMapper : public ISizeMapper
 {
@@ -10,7 +10,6 @@ private:
 public:
     virtual ~TypeSizeMapper() override = default;
     virtual QMap<QString, quint64>& getSizesMap(const QDir& dir) const override;
-    virtual QMap<QString, QString>& getPercentagesMap(const QMap<QString, quint64>& sizesMap) const override;
 };
 
 #endif // TYPESIZEMAPPER_H
