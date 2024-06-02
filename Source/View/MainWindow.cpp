@@ -1,4 +1,5 @@
-#include "MainWindow.h"
+#include "Header/View/MainWindow.h"
+#include "Header/Strategy/DirSizeMapper.h"
 #include <QSplitter>
 #include <QMenu>
 #include <QMenuBar>
@@ -10,10 +11,10 @@ MainWindow::MainWindow(const QString& rootDirPath, QWidget* parent) : QMainWindo
 
     QMenu* group = new QMenu("Group", parent);
 
-    QAction* groupByDir = new QAction(tr("&Group By Dir"), parent);
+    QAction* groupByDir = new QAction("Group By Dir", parent);
     QObject::connect(groupByDir, &QAction::triggered, this, &MainWindow::setGroupByDir);
 
-    QAction* groupByType = new QAction(tr("&Group By Type"), parent);
+    QAction* groupByType = new QAction("Group By Type", parent);
     QObject::connect(groupByType, &QAction::triggered, this, &MainWindow::setGroupByType);
 
     group->addAction(groupByDir);
@@ -30,7 +31,9 @@ MainWindow::MainWindow(const QString& rootDirPath, QWidget* parent) : QMainWindo
     fileSystemView->setModel(fileSystemModel);
     fileSystemView->expandAll();
 
-    dirModel = new FileBrowserModel(nullptr, this);
+    dirModel = new FileBrowserModel(this);
+    dirModel->setStrategy(new DirSizeMapper());
+    dirModel->setRootPath(rootDirPath);
 
     dirView = new QTableView();
     dirView->setModel(dirModel);
@@ -47,18 +50,17 @@ void MainWindow::selectionChanged(const QItemSelection &selected, const QItemSel
 {
     Q_UNUSED(deselected);
 
-    //QModelIndex index = fileSystemView->selectionModel()->currentIndex();
-    QModelIndexList indexes = selected.indexes();
-
-    dirView->setRootIndex(fileSystemModel->setRootPath(fileSystemModel->filePath(indexes.constFirst())));
+    dirModel->setRootPath(fileSystemModel->filePath(selected.indexes().constFirst()));
 }
 
-void MainWindow::setGroupByDir() const
+void MainWindow::setGroupByDir()
 {
-
+    if (dirModel) dirModel->~QAbstractTableModel();
+    dirModel->setStrategy(new DirSizeMapper());
 }
 
 void MainWindow::setGroupByType() const
 {
-
+    if (dirModel) dirModel->~QAbstractTableModel();
+    //dirModel->setStrategy();
 }

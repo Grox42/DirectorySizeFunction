@@ -9,23 +9,19 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Source/View/MainWindow.cpp \
     Source/Models/FileBrowserModel.cpp \
-    MainWindow.cpp \
-    Context.cpp \
-    Source/Models/TableEntryModel.cpp \
+    Source/Strategy/TypeSizeMapper.cpp \
     Source/Strategy/DirSizeMapper.cpp \
     Source/Strategy/ISizeMapper.cpp \
-    Source/Strategy/TypeSizeMapper.cpp \
     main.cpp
 
 HEADERS += \
+    Header/View/MainWindow.h \
     Header/Models/FileBrowserModel.h \
-    Header/Models/TableEntryModel.h \
-    MainWindow.h \
-    Context.h \
+    Header/Strategy/TypeSizeMapper.h \
     Header/Strategy/DirSizeMapper.h \
-    Header/Strategy/ISizeMapper.h \
-    Header/Strategy/TypeSizeMapper.h
+    Header/Strategy/ISizeMapper.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
