@@ -3,6 +3,7 @@
 
 #include <QMap>
 #include <QDir>
+#include <QSharedPointer>
 
 class ISizeMapper
 {
@@ -11,9 +12,9 @@ protected:
     static QString uint64ToSmart(quint64 size);
 public:
     virtual ~ISizeMapper() = default;
-    virtual QMap<QString, quint64>& getSizesMap(const QDir& dir) const = 0;
-    static QMap<QString, QString>& getPercentagesMap(const QMap<QString, quint64>& sizesMap);
-    static QMap<QString, QString>& getSmartSizesMap(const QMap<QString, quint64>& sizesMap);
+    virtual QSharedPointer<QMap<QString, quint64>> getSizesMap(const QDir& dir) const = 0;
+    static QSharedPointer<QMap<QString, QString>> getPercentagesMap(const QMap<QString, quint64>& sizesMap);
+    static QSharedPointer<QMap<QString, QString>> getSmartSizesMap(const QMap<QString, quint64>& sizesMap);
 };
 
 #endif // ISIZEMAPPER_H

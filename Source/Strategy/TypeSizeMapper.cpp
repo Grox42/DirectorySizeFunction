@@ -15,11 +15,11 @@ void TypeSizeMapper::addTypeSizePairs(const QFileInfo& fileInfo, QMap<QString, q
     }
 }
 
-QMap<QString, quint64>& TypeSizeMapper::getSizesMap(const QDir& dir) const
+QSharedPointer<QMap<QString, quint64>> TypeSizeMapper::getSizesMap(const QDir& dir) const
 {
     QMap<QString, quint64>* map = new QMap<QString, quint64>();
 
     addTypeSizePairs(QFileInfo(dir.path()), *map);
 
-    return *map;
+    return QSharedPointer<QMap<QString, quint64>>(map);
 }
