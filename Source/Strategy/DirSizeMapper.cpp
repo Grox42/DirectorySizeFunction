@@ -14,7 +14,7 @@ quint64 DirSizeMapper::getDirSize(const QFileInfo& fileInfo) const
     } else return fileInfo.size();
 }
 
-QMap<QString, quint64>& DirSizeMapper::getSizesMap(const QDir& dir) const
+QSharedPointer<QMap<QString, quint64>> DirSizeMapper::getSizesMap(const QDir& dir) const
 {
     QMap<QString, quint64>* map = new QMap<QString, quint64>();
 
@@ -26,5 +26,5 @@ QMap<QString, quint64>& DirSizeMapper::getSizesMap(const QDir& dir) const
         sum += getDirSize(fileInfo);
     map->insert("files", sum);
 
-    return *map;
+    return QSharedPointer<QMap<QString, quint64>>(map);
 }

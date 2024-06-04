@@ -9,7 +9,7 @@ private:
     void addTypeSizePairs(const QFileInfo& fileInfo, QMap<QString, quint64>& map) const;
 public:
     virtual ~TypeSizeMapper() override = default;
-    virtual QMap<QString, quint64>& getSizesMap(const QDir& dir) const override;
+    virtual QSharedPointer<QMap<QString, quint64>> getSizesMap(const QDir& dir) const override;
 };
 
 #endif // TYPESIZEMAPPER_H

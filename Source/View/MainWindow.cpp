@@ -45,8 +45,7 @@ MainWindow::MainWindow(const QString& rootDirPath, QWidget* parent) : QMainWindo
     splitter->addWidget(dirView);
     setCentralWidget(splitter);
 
-    QItemSelectionModel* selectionModel = fileSystemView->selectionModel();
-    QObject::connect(selectionModel, &QItemSelectionModel::selectionChanged, this, &MainWindow::selectionChanged);
+    QObject::connect(fileSystemView->selectionModel(), &QItemSelectionModel::selectionChanged, this, &MainWindow::selectionChanged);
 }
 
 MainWindow::~MainWindow()

@@ -43,19 +43,19 @@ void FileBrowserModel::setRootPath(const QString& rootPath)
     QElapsedTimer timer;
     timer.start();
 
-    QMap<QString, quint64> sizesMap = mapper->getSizesMap(QDir(rootPath));
-    QMap<QString, QString> percentMap = mapper->getPercentagesMap(sizesMap);
-    QMap<QString, QString> smartSizesMap = mapper->getSmartSizesMap(sizesMap);
+    QSharedPointer<QMap<QString, quint64>> sizesMap = mapper->getSizesMap(QDir(rootPath));
+    QSharedPointer<QMap<QString, QString>> percentMap = mapper->getPercentagesMap(*sizesMap);
+    QSharedPointer<QMap<QString, QString>> smartSizesMap = mapper->getSmartSizesMap(*sizesMap);
 
     qDebug() << rootPath << ':' << timer.elapsed() << "ms";
 
-    foreach (const QString& key, percentMap.keys())
-        entrances.append(QList<QString> { key, smartSizesMap.value(key), percentMap.value(key) });
+    foreach (const QString& key, percentMap->keys())
+        entrances.append(QList<QString> { key, smartSizesMap->value(key), percentMap->value(key) });
 
     emit headerDataChanged(Qt::Vertical, 0, entrances.size());
 }
 
-void FileBrowserModel::setStrategy(ISizeMapper *mapper)
+void FileBrowserModel::setStrategy(ISizeMapper* mapper)
 {
     this->mapper = mapper;
 
