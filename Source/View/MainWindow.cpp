@@ -45,8 +45,7 @@ MainWindow::MainWindow(const QString& rootDirPath, QWidget* parent) : QMainWindo
     splitter->addWidget(dirView);
     setCentralWidget(splitter);
 
-    QItemSelectionModel* selectionModel = fileSystemView->selectionModel();
-    QObject::connect(selectionModel, &QItemSelectionModel::selectionChanged, this, &MainWindow::selectionChanged);
+    QObject::connect(fileSystemView->selectionModel(), &QItemSelectionModel::selectionChanged, this, &MainWindow::selectionChanged);
 }
 
 MainWindow::~MainWindow()
@@ -59,7 +58,7 @@ void MainWindow::setGroupByDir() { dirModel->setStrategy(strategies[0]); }
 
 void MainWindow::setGroupByType() { dirModel->setStrategy(strategies[1]); }
 
-void MainWindow::selectionChanged(const QItemSelection &selected, const QItemSelection &deselected)
+void MainWindow::selectionChanged(const QItemSelection& selected, const QItemSelection& deselected)
 {
     Q_UNUSED(deselected);
     dirModel->setRootPath(fileSystemModel->filePath(selected.indexes().constFirst()));

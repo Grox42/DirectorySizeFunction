@@ -31,7 +31,7 @@ QString ISizeMapper::uint64ToSmart(quint64 size)
         return QString::number(newSize, 'd', 1) + " b";
 }
 
-QMap<QString, QString>& ISizeMapper::getPercentagesMap(const QMap<QString, quint64>& sizesMap)
+QSharedPointer<QMap<QString, QString>> ISizeMapper::getPercentagesMap(const QMap<QString, quint64>& sizesMap)
 {
     QMap<QString, QString>* map = new QMap<QString, QString>();
 
@@ -42,15 +42,15 @@ QMap<QString, QString>& ISizeMapper::getPercentagesMap(const QMap<QString, quint
     foreach (const QString& key, sizesMap.keys())
         map->insert(key, uint64ToPercent(sizesMap.value(key), whole));
 
-    return *map;
+    return QSharedPointer<QMap<QString, QString>>(map);
 }
 
-QMap<QString, QString>& ISizeMapper::getSmartSizesMap(const QMap<QString, quint64>& sizesMap)
+QSharedPointer<QMap<QString, QString>> ISizeMapper::getSmartSizesMap(const QMap<QString, quint64>& sizesMap)
 {
     QMap<QString, QString>* map = new QMap<QString, QString>();
 
     foreach (const QString& key, sizesMap.keys())
         map->insert(key, uint64ToSmart(sizesMap.value(key)));
 
-    return *map;
+    return QSharedPointer<QMap<QString, QString>>(map);
 }

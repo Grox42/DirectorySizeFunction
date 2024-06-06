@@ -9,8 +9,7 @@ class FileBrowserModel : public QAbstractTableModel
 {
     Q_OBJECT
 private:
-    inline static const QList<QString> HEADER
-    { "Name", "Size", "Percent" };
+    inline static const QList<QString> HEADER { "Name", "Size", "Percent" };
     ISizeMapper* mapper = nullptr;
     QString rootPath;
     QList<QList<QString>> entrances;
