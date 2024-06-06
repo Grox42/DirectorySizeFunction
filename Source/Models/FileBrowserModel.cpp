@@ -38,7 +38,6 @@ QVariant FileBrowserModel::data(const QModelIndex& index, int role) const
 void FileBrowserModel::setRootPath(const QString& rootPath)
 {
     this->rootPath = rootPath;
-    entrances.clear();
 
     QElapsedTimer timer;
     timer.start();
@@ -49,10 +48,13 @@ void FileBrowserModel::setRootPath(const QString& rootPath)
 
     qDebug() << rootPath << ':' << timer.elapsed() << "ms";
 
+    beginResetModel();
+
+    entrances.clear();
     foreach (const QString& key, percentMap->keys())
         entrances.append(QList<QString> { key, smartSizesMap->value(key), percentMap->value(key) });
 
-    emit headerDataChanged(Qt::Vertical, 0, entrances.size());
+    endResetModel();
 }
 
 void FileBrowserModel::setStrategy(ISizeMapper* mapper)

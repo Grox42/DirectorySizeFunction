@@ -58,7 +58,7 @@ void MainWindow::setGroupByDir() { dirModel->setStrategy(strategies[0]); }
 
 void MainWindow::setGroupByType() { dirModel->setStrategy(strategies[1]); }
 
-void MainWindow::selectionChanged(const QItemSelection &selected, const QItemSelection &deselected)
+void MainWindow::selectionChanged(const QItemSelection& selected, const QItemSelection& deselected)
 {
     Q_UNUSED(deselected);
     dirModel->setRootPath(fileSystemModel->filePath(selected.indexes().constFirst()));
