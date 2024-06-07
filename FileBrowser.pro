@@ -1,4 +1,5 @@
-QT       += core gui
+QT += core gui
+QT += charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -9,6 +10,9 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Source/View/Charts/BarChart.cpp \
+    Source/View/Charts/IChart.cpp \
+    Source/View/Charts/PieChart.cpp \
     Source/View/MainWindow.cpp \
     Source/Models/FileBrowserModel.cpp \
     Source/Strategy/TypeSizeMapper.cpp \
@@ -17,6 +21,9 @@ SOURCES += \
     main.cpp
 
 HEADERS += \
+    Header/View/Charts/BarChart.h \
+    Header/View/Charts/IChart.h \
+    Header/View/Charts/PieChart.h \
     Header/View/MainWindow.h \
     Header/Models/FileBrowserModel.h \
     Header/Strategy/TypeSizeMapper.h \
