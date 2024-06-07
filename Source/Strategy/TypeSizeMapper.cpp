@@ -9,7 +9,7 @@ void TypeSizeMapper::addTypeSizePairs(const QFileInfo& fileInfo, QMap<QString, q
         foreach (const QFileInfo& entry, dir.entryInfoList(QDir::Dirs | QDir::Files | QDir::Hidden | QDir::NoDotAndDotDot))
             addTypeSizePairs(entry, map);
     } else {
-        QString suffix = '.' + fileInfo.completeSuffix();
+        QString suffix = "*." + fileInfo.completeSuffix();
         if (map.contains(suffix)) map[suffix] += fileInfo.size();
         else map.insert(suffix, fileInfo.size());
     }

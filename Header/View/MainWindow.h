@@ -25,6 +25,9 @@ private slots:
     void selectionChanged(const QItemSelection& selected, const QItemSelection& deselected);
     void setGroupByDir();
     void setGroupByType();
+    //void setTable();
+    //void setBarChart();
+    //void setPieChart();
 };
 
 #endif // MAINWINDOW_H
