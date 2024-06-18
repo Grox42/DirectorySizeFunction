@@ -10,25 +10,35 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Source/View/Charts/BarChart.cpp \
-    Source/View/Charts/IChart.cpp \
-    Source/View/Charts/PieChart.cpp \
-    Source/View/MainWindow.cpp \
-    Source/Models/FileBrowserModel.cpp \
-    Source/Strategy/TypeSizeMapper.cpp \
-    Source/Strategy/DirSizeMapper.cpp \
-    Source/Strategy/ISizeMapper.cpp \
+    View/Adapters/PieChartAdapter.cpp \
+    View/Adapters/BarChartAdapter.cpp \
+    View/Adapters/TableChartAdapter.cpp \
+    View/FileBrowser.cpp \
+    Charts/PieChart.cpp \
+    Charts/BarChart.cpp \
+    Charts/IChart.cpp \
+    Observer/Observable.cpp \
+    Models/FileBrowserModel.cpp \
+    Strategies/TypeSizeMapper.cpp \
+    Strategies/DirSizeMapper.cpp \
+    Strategies/ISizeMapper.cpp \
     main.cpp
 
 HEADERS += \
-    Header/View/Charts/BarChart.h \
-    Header/View/Charts/IChart.h \
-    Header/View/Charts/PieChart.h \
-    Header/View/MainWindow.h \
-    Header/Models/FileBrowserModel.h \
-    Header/Strategy/TypeSizeMapper.h \
-    Header/Strategy/DirSizeMapper.h \
-    Header/Strategy/ISizeMapper.h
+    View/Adapters/PieChartAdapter.h \
+    View/Adapters/BarChartAdapter.h \
+    View/Adapters/TableChartAdapter.h \
+    View/FileBrowser.h \
+    Charts/PieChart.h \
+    Charts/BarChart.h \
+    Charts/IChart.h \
+    Observer/Observer.h \
+    Observer/Observable.h \
+    Models/FileBrowserModel.h \
+    Strategies/TypeSizeMapper.h \
+    Strategies/DirSizeMapper.h \
+    Strategies/ISizeMapper.h
+	
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
