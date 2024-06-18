@@ -7,7 +7,7 @@
 
 class IChart
 {
-protected:
+private:
     virtual QtCharts::QAbstractSeries* getSeries(const QMap<QString, quint64>& sizesMap) const = 0;
     void setLegend(QtCharts::QLegend* legend) const;
 public:

@@ -1,10 +1,10 @@
 #ifndef PIECHARTADAPTER_H
 #define PIECHARTADAPTER_H
 
-#include "../FileBrowser.h"
+#include "../IFileBrowser.h"
 #include "Charts/PieChart.h"
 
-class PieChartAdapter : public FileBrowser
+class PieChartAdapter : public IFileBrowser
 {
 private:
     IChart* pieChartFactory = new PieChart();

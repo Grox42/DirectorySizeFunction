@@ -2,7 +2,7 @@
 #include <QSplitter>
 
 TableChartAdapter::TableChartAdapter(const QString &rootDirPath, QWidget *parent)
-    : FileBrowser(rootDirPath, parent)
+    : IFileBrowser(rootDirPath, parent)
 {
     dirModel = new FileBrowserModel(this);
 

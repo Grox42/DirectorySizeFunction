@@ -5,7 +5,7 @@
 using namespace QtCharts;
 
 BarChartAdapter::BarChartAdapter(const QString& rootDirPath, QWidget* parent)
-    : FileBrowser(rootDirPath, parent)
+    : IFileBrowser(rootDirPath, parent)
 {
     QChartView* chartView = new QChartView(barChartFactory->CreateChart(QMap<QString, quint64>()));
 

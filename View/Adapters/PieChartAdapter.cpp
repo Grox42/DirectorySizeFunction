@@ -5,7 +5,7 @@
 using namespace QtCharts;
 
 PieChartAdapter::PieChartAdapter(const QString& rootDirPath, QWidget* parent)
-    : FileBrowser(rootDirPath, parent)
+    : IFileBrowser(rootDirPath, parent)
 {
     QChartView* chartView = new QChartView(pieChartFactory->CreateChart(QMap<QString, quint64>()));
 

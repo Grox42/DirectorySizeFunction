@@ -1,9 +1,9 @@
 #ifndef ISIZEMAPPER_H
 #define ISIZEMAPPER_H
 
-#include "Observer/Observable.h"
+#include "Observer/IObservable.h"
 
-class ISizeMapper : public Observable
+class ISizeMapper : public IObservable
 {
 public:
     virtual ~ISizeMapper() = default;

@@ -5,7 +5,7 @@
 #include "View/Adapters/PieChartAdapter.h"
 #include <QApplication>
 
-void switchChart(FileBrowser* charts[], qint32 oldIndex, qint32 newIndex)
+void switchChart(IFileBrowser* charts[], qint32 oldIndex, qint32 newIndex)
 {
     if (oldIndex == newIndex) return;
 
@@ -15,7 +15,7 @@ void switchChart(FileBrowser* charts[], qint32 oldIndex, qint32 newIndex)
     charts[oldIndex]->hide();
 }
 
-void setMenuChart(FileBrowser* charts[])
+void setMenuChart(IFileBrowser* charts[])
 {
     for(qint32 index = 0; index < 3; index++) {
         QMenu* chart = new QMenu("Chart", charts[index]);
@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
 
     QString rootDirPath("D:/Programming/Qt");
     ISizeMapper* strategies[] { new DirSizeMapper, new TypeSizeMapper };
-    FileBrowser* charts[] {
+    IFileBrowser* charts[] {
         new TableChartAdapter(rootDirPath),
         new BarChartAdapter(rootDirPath),
         new PieChartAdapter(rootDirPath)

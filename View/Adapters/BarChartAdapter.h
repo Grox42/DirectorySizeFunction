@@ -1,10 +1,10 @@
 #ifndef BARCHARTADAPTER_H
 #define BARCHARTADAPTER_H
 
-#include "../FileBrowser.h"
+#include "../IFileBrowser.h"
 #include "Charts/BarChart.h"
 
-class BarChartAdapter : public FileBrowser
+class BarChartAdapter : public IFileBrowser
 {
 private:
     IChart* barChartFactory = new BarChart();

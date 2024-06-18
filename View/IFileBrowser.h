@@ -1,17 +1,17 @@
-#ifndef FILEBROWSER_H
-#define FILEBROWSER_H
+#ifndef IFILEBROWSER_H
+#define IFILEBROWSER_H
 
 #include "Strategies/ISizeMapper.h"
-#include "Observer/Observer.h"
+#include "Observer/IObserver.h"
 #include <QMainWindow>
 #include <QFileSystemModel>
 #include <QTreeView>
 #include <QMenuBar>
 
-class FileBrowser : public QMainWindow, public Observer
+class IFileBrowser : public QMainWindow, public IObserver
 {
     Q_OBJECT
-protected:
+private:
     QFileSystemModel* fileSystemModel = nullptr;
     QTreeView* fileSystemView = nullptr;
     QMenu* group = nullptr;
@@ -19,13 +19,13 @@ protected:
     ISizeMapper* currentMapper = nullptr;
     QMap<QString, ISizeMapper*> strategies;
 public:
-    FileBrowser(const QString& rootDirPath, QWidget* parent = nullptr);
+    IFileBrowser(const QString& rootDirPath, QWidget* parent = nullptr);
     virtual void updateDisplay(const QMap<QString, quint64>& sizesMap) = 0;
     bool addStrategy(const QString& name, ISizeMapper* mapper);
     bool delStrategy(const QString& name);
-    bool setStatus(FileBrowser* fileBrowser);
+    bool setStatus(IFileBrowser* fileBrowser);
 private slots:
     void selectionChanged(const QItemSelection& selected, const QItemSelection& deselected);
 };
 
-#endif // FILEBROWSER_H
+#endif // IFILEBROWSER_H

@@ -1,12 +1,12 @@
-#ifndef OBSERVER_H
-#define OBSERVER_H
+#ifndef IOBSERVER_H
+#define IOBSERVER_H
 
 #include <QMap>
 
-class Observer
+class IObserver
 {
 public:
     virtual void updateDisplay(const QMap<QString, quint64>& sizesMap) = 0;
 };
 
-#endif // OBSERVER_H
+#endif // IOBSERVER_H

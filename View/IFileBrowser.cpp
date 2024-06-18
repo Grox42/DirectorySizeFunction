@@ -1,9 +1,9 @@
-#include "FileBrowser.h"
+#include "IFileBrowser.h"
 #include <QSplitter>
 #include <QItemSelectionModel>
 #include <QHeaderView>
 
-FileBrowser::FileBrowser(const QString& rootDirPath, QWidget* parent)
+IFileBrowser::IFileBrowser(const QString& rootDirPath, QWidget* parent)
     : QMainWindow(parent)
 {
     this->rootDirPath = rootDirPath;
@@ -29,10 +29,10 @@ FileBrowser::FileBrowser(const QString& rootDirPath, QWidget* parent)
     splitter->addWidget(fileSystemView);
     setCentralWidget(splitter);
 
-    QObject::connect(fileSystemView->selectionModel(), &QItemSelectionModel::selectionChanged, this, &FileBrowser::selectionChanged);
+    QObject::connect(fileSystemView->selectionModel(), &QItemSelectionModel::selectionChanged, this, &IFileBrowser::selectionChanged);
 }
 
-bool FileBrowser::addStrategy(const QString& name, ISizeMapper* mapper)
+bool IFileBrowser::addStrategy(const QString& name, ISizeMapper* mapper)
 {
     if (strategies.contains(name)) return false;
 
@@ -49,7 +49,7 @@ bool FileBrowser::addStrategy(const QString& name, ISizeMapper* mapper)
     return true;
 }
 
-bool FileBrowser::delStrategy(const QString& name)
+bool IFileBrowser::delStrategy(const QString& name)
 {
     if (!strategies.contains(name)) return false;
 
@@ -65,7 +65,7 @@ bool FileBrowser::delStrategy(const QString& name)
     return true;
 }
 
-bool FileBrowser::setStatus(FileBrowser* fileBrowser)
+bool IFileBrowser::setStatus(IFileBrowser* fileBrowser)
 {
     foreach (const QString& key, strategies.keys())
         if (strategies.value(key) == fileBrowser->currentMapper) {
@@ -76,7 +76,7 @@ bool FileBrowser::setStatus(FileBrowser* fileBrowser)
     return false;
 }
 
-void FileBrowser::selectionChanged(const QItemSelection& selected, const QItemSelection& deselected)
+void IFileBrowser::selectionChanged(const QItemSelection& selected, const QItemSelection& deselected)
 {
     Q_UNUSED(deselected);
     rootDirPath = fileSystemModel->filePath(selected.constFirst().indexes().constFirst());

@@ -1,11 +1,11 @@
 #ifndef TABLECHARTADAPTER_H
 #define TABLECHARTADAPTER_H
 
-#include "../FileBrowser.h"
+#include "../IFileBrowser.h"
 #include "Models/FileBrowserModel.h"
 #include <QTableView>
 
-class TableChartAdapter : public FileBrowser
+class TableChartAdapter : public IFileBrowser
 {
 private:
     FileBrowserModel* dirModel = nullptr;
