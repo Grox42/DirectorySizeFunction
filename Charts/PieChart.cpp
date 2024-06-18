@@ -1,4 +1,4 @@
-#include "Header/View/Charts/PieChart.h"
+#include "PieChart.h"
 #include <QPieSeries>
 
 using namespace QtCharts;

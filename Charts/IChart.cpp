@@ -1,4 +1,4 @@
-#include "Header/View/Charts/IChart.h"
+#include "IChart.h"
 
 using namespace QtCharts;
 

@@ -1,4 +1,4 @@
-#include "Header/View/Charts/BarChart.h"
+#include "BarChart.h"
 #include <QBarSet>
 #include <QBarSeries>
 

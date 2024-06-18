@@ -1,4 +1,5 @@
-#include "Header/Strategy/DirSizeMapper.h"
+#include "DirSizeMapper.h"
+#include <QDir>
 
 quint64 DirSizeMapper::getDirSize(const QFileInfo& fileInfo) const
 {
@@ -14,9 +15,10 @@ quint64 DirSizeMapper::getDirSize(const QFileInfo& fileInfo) const
     } else return fileInfo.size();
 }
 
-QSharedPointer<QMap<QString, quint64>> DirSizeMapper::getSizesMap(const QDir& dir) const
+void DirSizeMapper::getSizesMap(const QString& dirPath) const
 {
     QMap<QString, quint64>* map = new QMap<QString, quint64>();
+    QDir dir(dirPath);
 
     foreach (const QFileInfo& fileInfo, dir.entryInfoList(QDir::Dirs | QDir::Hidden | QDir::NoDotAndDotDot))
         map->insert(fileInfo.fileName(), getDirSize(fileInfo));
@@ -26,5 +28,7 @@ QSharedPointer<QMap<QString, quint64>> DirSizeMapper::getSizesMap(const QDir& di
         sum += getDirSize(fileInfo);
     map->insert("files", sum);
 
-    return QSharedPointer<QMap<QString, quint64>>(map);
+    selectionEvent(*map);
+
+    delete map;
 }
